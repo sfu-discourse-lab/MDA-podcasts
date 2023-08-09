@@ -25,7 +25,7 @@ This csv contains the unrotated eigenvalues which were calculated based on the c
 
 This csv contains the factor scores of a three factor solution for each of the individual texts in the dataset. The first column contains the file names.
 
-*KMO_CORE.txt
+* KMO_CORE.txt
 
 A text file with the output of test for the Kaiser-Meyer-Olkin factor adequacy which shows that the data is factorable.
 
@@ -65,7 +65,7 @@ This csv contains the unrotated eigenvalues which were calculated based on the c
 
 * factorScores_traditional.csv
 
-* *KMO_traditional.txt
+* KMO_traditional.txt
 
 A text file with the output of test for the Kaiser-Meyer-Olkin factor adequacy which shows that the data is factorable.
 
