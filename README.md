@@ -11,7 +11,7 @@ This repository comprises the data and scripts for conducting multi-dimensional 
 
 * tba
 
-This paper presents multi-dimensional analyses of podcasts as an emerging register of computer-mediated communication. Podcasts, a relatively recent audio medium, have risen in popularity since their initial appearance in the mid-2000s. Yet, little is known about their structural linguistic characteristics and their relation to other computer-mediated, spoken and written registers. Addressing this gap in the literature, the lexico-grammatical features of a representative sample of Spotify podcast transcripts are compared to selected computer-mediated registers (e.g., personal blog, informational blog, interview) as well as traditional spoken registers (e.g., broadcast, conversation, unscripted speech).
+This paper presents two full multi-dimensional analyses of podcasts as an emerging register of computer-mediated communication, together with other registers. Podcasts, a relatively recent audio medium, have risen in popularity since their initial appearance in the mid-2000s. Yet, little is known about their structural linguistic characteristics and their relation to other computer-mediated, spoken and written registers. Addressing this gap in the literature, the lexico-grammatical features of a representative sample of Spotify podcast transcripts are compared to selected computer-mediated registers (e.g., personal blog, informational blog, interview) as well as traditional spoken registers (e.g., broadcast, conversation, unscripted speech).
 
 The datasets published in this repository originate from the [*Spotify Podcast Dataset*](https://research.atspotify.com/publications/100000-podcasts-a-spoken-english-document-corpus/), the [*Corpus of Online Registers of English*](https://www.english-corpora.org/core/) (CORE), the [*British National Corpus*](https://www.english-corpora.org/core/) (BNC, XML edition), the [*Santa Barbara Corpus of Spoken American English*](https://www.linguistics.ucsb.edu/research/santa-barbara-corpus), and the English [*Pear Stories*](http://pearstories.org/english/english.htm). The corpus data was annotated with parts-of-speech tags using the Multidimensional Analysis Tagger and all tags were automatically retrieved with a custom-written python script (available here https://github.com/sfu-discourse-lab/MDA_project). See the related publication for details on the dataset and methodology.
 
@@ -106,4 +106,4 @@ A list of all individual texts (first column) and information on their register 
 
 A list of 67 lexico-grammatical features. The first column provides the part-of-speech tag, the second column gives a brief description of the feature.
 
-
+## How to cite
