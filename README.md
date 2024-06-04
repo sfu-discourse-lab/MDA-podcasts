@@ -15,7 +15,17 @@ This paper presents two full multi-dimensional analyses of podcasts as an emergi
 
 The datasets published in this repository originate from the [*Spotify Podcast Dataset*](https://research.atspotify.com/publications/100000-podcasts-a-spoken-english-document-corpus/), the [*Corpus of Online Registers of English*](https://www.english-corpora.org/core/) (CORE), the [*British National Corpus*](https://www.english-corpora.org/core/) (BNC, XML edition), the [*Santa Barbara Corpus of Spoken American English*](https://www.linguistics.ucsb.edu/research/santa-barbara-corpus), and the English [*Pear Stories*](http://pearstories.org/english/english.htm). The corpus data was annotated with parts-of-speech tags using the Multidimensional Analysis Tagger and all tags were automatically retrieved with a custom-written python script (available here https://github.com/sfu-discourse-lab/MDA_project). See the related publication for details on the dataset and methodology.
 
-### File description and overview: podcasts and computer-mediated registers 
+### Folder structure
+
+* :file_folder: mda_CORE -- all materials and scripts for the analysis of podcasts and other online registers
+  
+* :file_folder: mda:traditional -- all materials and scripts for the analysis of podcasts and traditional spoken registers
+
+* postag_description.csv -- a list of 67 lexico-grammatical features. The first column provides the part-of-speech tag, the second column gives a brief description of the feature.
+
+### File descriptions
+
+Each folder contains the following statistical materials
 
 * eigenvalues_CORE.csv
 
@@ -102,8 +112,5 @@ A list of all individual texts (first column) and information on their register 
 
 ### Other files
 
-* postag_description.csv
-
-A list of 67 lexico-grammatical features. The first column provides the part-of-speech tag, the second column gives a brief description of the feature.
 
 ## How to cite
