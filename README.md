@@ -46,7 +46,7 @@ Each folder contains a stats folder with the following statistical materials
 #### Scripts and other files
 
 * mda_factorAnalysis -- r script containing the commands for conducting factor analysis (multi-dimensional analysis) and other statistics as described in the related publication.
-* 
+  
 * mda_ggplots -- r script for visualisations
 
 * texts_by_register -- list of all individual texts (first column) and information on their register (second column). Note that short register labels are used.
