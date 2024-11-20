@@ -17,7 +17,9 @@ The datasets published in this repository originate from the [*Spotify Podcast D
 
 ### Content overview
 
-* :file_folder: mda_CORE -- all materials and scripts for the analysis of podcasts and other online registers
+* :file_folder: mda_CORE -- all materials and scripts for the analysis of podcasts and computer-mediated registers
+
+* :file_folder: mda_single -- scripts and statistics for the joint analysis of podcasts, computer-mediated registers, and traditional spoken registers. This folder does not contain any data. Use the data in the mda_CORE and mda_traditional folders. 
   
 * :file_folder: mda_traditional -- all materials and scripts for the analysis of podcasts and traditional spoken registers
 
