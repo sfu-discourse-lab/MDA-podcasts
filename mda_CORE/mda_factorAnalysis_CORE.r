@@ -143,3 +143,19 @@ sd_meanfactorScores = factorScores %>% group_by(register) %>%
 summarise_if(is.numeric, list(mean = ~mean(., na.rm=T), sd = ~sd(., na.rm=T)))
 
 #write.csv(sd_meanfactorScores, "sd_mean_meanFactorScores_CORE.csv", row.names=F)
+
+
+##assess how much variation is explained by register distinctions
+
+#run linear regression on each factor using factor scores for individual texts
+
+modelF1 = lm(Factor1 ~ Register, data = factorScores)
+
+modelF2 = lm(Factor2 ~ Register, data = factorScores)
+
+modelF3 = lm(Factor3 ~ Register, data = factorScores)
+
+
+#call model summaries with
+summary()
+
