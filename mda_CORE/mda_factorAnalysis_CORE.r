@@ -1,7 +1,11 @@
-####R commands for factor analysis and related statistics, podcasts and other online registers, as presented in Aminat Babayode, Laurens Bosman, Nicole Chan, Katharina Ehret, Ivan Fong, Noelle Harris, Alissa Hewton, Danica Reid, Maite Taboada, Rebekah Wong "Podcasts as an emerging register of computer-mediated communication" (to be submitted to: Register Studies)
+###R commands for factor analysis and related statistics of podcasts and
+###computer-mediated registers as presented in Katharina Ehret, Laurens Bosman,
+###Aminat Babayode, Nicole Chan, Ivan Fong, Noelle Harris, Alissa Hewton,
+###Danica Reid, Rebekah Wong, and Maite Taboada. Submitted. Podcasts as an
+###emerging register of computer-mediated communication. 
 
 
-#load libraries
+#load packages
 library(tidyverse)
 library(psych)
 library(reshape2)
