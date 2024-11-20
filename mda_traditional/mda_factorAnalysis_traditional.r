@@ -1,6 +1,10 @@
-####R commands for factor analysis and related statistics, podcasts and traditional spoken registers, as presented in Aminat Babayode, Laurens Bosman, Nicole Chan, Katharina Ehret, Ivan Fong, Noelle Harris, Alissa Hewton, Danica Reid, Maite Taboada, Rebekah Wong "Podcasts as an emerging register of computer-mediated communication" (to be submitted to: Register Studies)
+###R commands for factor analysis and related statistics of podcasts and
+###traditional spoken registers as presented in Katharina Ehret, Laurens
+###Bosman, Aminat Babayode, Nicole Chan, Ivan Fong, Noelle Harris, Alissa
+###Hewton, Danica Reid, Rebekah Wong, and Maite Taboada.  Submitted. Podcasts
+###as an emerging register of computer-mediated communication. 
 
-#load libraries
+#load packages
 library(tidyverse)
 library(psych)
 library(reshape2)
@@ -146,5 +150,20 @@ sd_meanfactorScores = factorScores %>% group_by(register) %>%
 summarise_if(is.numeric, list(mean = ~mean(., na.rm=T), sd = ~sd(., na.rm=T)))
 
 #write.csv(sd_meanfactorScores, "sd_mean_meanFactorScores_traditional.csv", row.names=F)
+
+
+##assess how much variation is explained by register distinctions
+
+#run linear regression on each factor using factor scores for individual texts
+
+modelF1 = lm(Factor1 ~ Register, data = factorScores)
+
+modelF2 = lm(Factor2 ~ Register, data = factorScores)
+
+modelF3 = lm(Factor3 ~ Register, data = factorScores)
+
+
+#call model summaries with
+summary()
 
 
