@@ -41,7 +41,9 @@ Each folder contains a stats folder with the following statistical materials
 
 * postag_counts_normalized -- normalised feature frequencies of 67 lexico-grammatical features (see postag_description) which were automatically retrieved from each text in the dataset. The frequencies were normalised per 1000 word tokens. This csv serves as input for the factor analysis. The file is zipped, because it is rather large.
 
-* sd_meanFactorScores -- standard deviation of the mean factor scores per register. 
+* sd_meanFactorScores -- standard deviation of the mean factor scores per register.
+  
+* R_squared.txt -- R-squared values and regression output.
 
 #### Scripts and other files
 
