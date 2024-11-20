@@ -141,6 +141,8 @@ factorScores = as.data.frame(fa3$scores)
 
 #create register information for joint data
 
+#the register by texts can be found in the respective folders for the CORE and traditional spoken analysis
+
 registers_trad = read.csv("texts_by_register_traditional.csv")
 
 registers_core = read.csv("texts_by_register_CORE.csv")
