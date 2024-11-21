@@ -151,10 +151,23 @@ p + geom_boxplot() + stat_summary(fun=mean, colour="black", size=.5, shape=23, f
 ggsave("boxplot_D1_traditional.pdf", dpi=300, unit="mm", width=180)
 ggsave("boxplot_D1_traditional.jpg", dpi=300, unit="mm", width=180)
 
+#adding the mean results in an error about 11 data points being removed:
+#extract the means calculated by stat_summary() to compare against the mean
+#factor scores calculated previously. There are no differences
 
-#create boxplot with jitter
+meansDim1_statSum <- ggplot_build(p)$data[[2]]$y
 
-#p + geom_boxplot(outlier.shape=NA) + geom_jitter(width=0.2) + scale_x_discrete(guide = guide_axis(angle=90)) #overlay with individual data points
+#add register information in correct order
+
+register_sorted <- sort(unique(scores$Register))
+
+#store as dataframe and save
+
+meansDim1 <- data.frame(register_sorted, meansDim1_statSum)
+
+colnames(meansDim1) <- c("register", "meansDim1_statSummary")
+
+write.csv(meansDim1, "stats/statsummary_Dim1_means_traditional.csv", row.names=F)
 
 
 #create simple boxplot Factor 2
@@ -176,10 +189,23 @@ p2 + geom_boxplot() + stat_summary(fun=mean, colour="black", size=.5, shape=23, 
 ggsave("boxplot_D2_traditional.pdf", dpi=300, unit="mm", width=180)
 ggsave("boxplot_D2_traditional.jpg", dpi=300, unit="mm", width=180)
 
+#adding the mean results in an error about 11 data points being removed:
+#extract the means calculated by stat_summary() to compare against the mean
+#factor scores calculated previously. There are no differences
 
-#create boxplot with jitter
+meansDim2_statSum <- ggplot_build(p2)$data[[2]]$y
 
-#p2 + geom_boxplot(outlier.shape=NA) + geom_jitter(width=0.2) + scale_x_discrete(guide = guide_axis(angle=90))
+#add register information in correct order
+
+register_sorted <- sort(unique(scores$Register))
+
+#store as dataframe and save
+
+meansDim2 <- data.frame(register_sorted, meansDim2_statSum)
+
+colnames(meansDim2) <- c("register", "meansDim2_statSummary")
+
+write.csv(meansDim2, "stats/statsummary_Dim2_means_traditional.csv", row.names=F)
 
 
 #create simple boxplot Factor 3
@@ -202,8 +228,25 @@ ggsave("boxplot_D3_traditional.pdf", dpi=300, unit="mm", width=180)
 ggsave("boxplot_D3_traditional.jpg", dpi=300, unit="mm", width=180)
 
 
-#create boxplot with jitter
+#adding the mean results in an error about 11 data points being removed:
+#extract the means calculated by stat_summary() to compare against the mean
+#factor scores calculated previously. There are no differences
 
-#p3 + geom_boxplot(outlier.shape=NA) + geom_jitter(width=0.2) + scale_x_discrete(guide = guide_axis(angle=90))
+meansDim3_statSum <- ggplot_build(p3)$data[[2]]$y
+
+#add register information in correct order
+
+register_sorted <- sort(unique(scores$Register))
+
+#store as dataframe and save
+
+meansDim3 <- data.frame(register_sorted, meansDim3_statSum)
+
+colnames(meansDim3) <- c("register", "meansDim3_statSummary")
+
+write.csv(meansDim3, "stats/statsummary_Dim3_means_traditional.csv", row.names=F)
+
+
+
 
 
