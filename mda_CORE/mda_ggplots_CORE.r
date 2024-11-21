@@ -1,4 +1,8 @@
-####R commands for creating plots of podcasts and other online registers as presented in Aminat Babayode, Laurens Bosman, Nicole Chan, Katharina Ehret, Ivan Fong, Noelle Harris, Alissa Hewton, Danica Reid, Maite Taboada, Rebekah Wong "Podcasts as an emerging register of computer-mediated communication" (submitted to: Register Studies)
+###R commands for creating plots of podcasts and computer-mediated
+###registers as presented in Katharina Ehret, Laurens Bosman, Aminat Babayode,
+###Nicole Chan, Ivan Fong, Noelle Harris, Alissa Hewton, Danica Reid, Rebekah
+###Wong, and Maite Taboada. Submitted. Podcasts as an emerging register of
+###computer-mediated communication. 
 
 
 #load packages
@@ -145,8 +149,6 @@ scores$Register <- case_match(
  .default = scores$Register)
 
 
-##boxplots
-
 #create simple boxplot Factor 1
 
 p <- ggplot(scores, aes(Register, Factor1, fill=mode)) + 
@@ -158,15 +160,28 @@ p <- ggplot(scores, aes(Register, Factor1, fill=mode)) +
 
 #plot and add mean factor scores
 
-p + geom_boxplot() + stat_summary(fun=mean, colour="black", size=.5, shape=23, fill="black") #we can ignore the warning about missing data points; the plots with the data points look the same
+p + geom_boxplot() + stat_summary(fun=mean, colour="black", size=.5, shape=23, fill="black") 
 
 ggsave("boxplot_D1_CORE.pdf", dpi=300, unit="mm", width=180)
 ggsave("boxplot_D1_CORE.jpg", dpi=300, unit="mm", width=180)
 
+#adding the mean results in an error about 11 data points being removed:
+#extract the means calculated by stat_summary() to compare against the mean
+#factor scores calculated previously. There are no differences
 
-#create boxplot with jitter 
+meansDim1_statSum <- ggplot_build(p)$data[[2]]$y
 
-#p + geom_boxplot(outlier.shape=NA) + geom_jitter(width=0.2) # to overlay with original data points
+#add register information in correct order
+
+register_sorted <- sort(unique(scores$Register))
+
+#store as dataframe and save
+
+meansDim1 <- data.frame(register_sorted, meansDim1_statSum)
+
+colnames(meansDim1) <- c("register", "meansDim1_statSummary")
+
+write.csv(meansDim1, "stats/statsummary_Dim1_means_CORE.csv", row.names=F)
 
 
 #create simple boxplot Factor 2
@@ -186,31 +201,28 @@ ggsave("boxplot_D2_CORE.pdf", dpi=300, unit="mm", width=180)
 ggsave("boxplot_D2_CORE.jpg", dpi=300, unit="mm", width=180)
 
 
-#create boxplot with jitter
+#adding the mean results in an error about 11 data points being removed:
+#extract the means calculated by stat_summary() to compare against the mean
+#factor scores calculated previously. There are no differences
 
-#p2 + geom_boxplot(outlier.shape=NA) + geom_jitter(width=0.2) # to overlay with original data points
+meansDim2_statSum <- ggplot_build(p2)$data[[2]]$y
 
+#add register information in correct order
 
-#create simple boxplot Factor 3
+register_sorted <- sort(unique(scores$Register))
 
-p3 <- ggplot(scores, aes(Register, Factor3, fill=mode)) + 
-	scale_x_discrete(guide = guide_axis(angle=90)) +
-	scale_fill_viridis_d() +
-	ylab("Public narrative vs. non-narrative") +
-	xlab("Register") +
-	theme_bw()
+#store as dataframe and save
 
-#plot and add mean factor scores
+meansDim2 <- data.frame(register_sorted, meansDim2_statSum)
 
-p3 + geom_boxplot() + stat_summary(fun=mean, colour="black", size=.5, shape=23, fill="black")
+colnames(meansDim2) <- c("register", "meansDim2_statSummary")
 
-ggsave("boxplot_D3_CORE.pdf", dpi=300, unit="mm", width=180)
-ggsave("boxplot_D3_CORE.jpg", dpi=300, unit="mm", width=180)
+write.csv(meansDim2, "stats/statsummary_Dim2_means_CORE.csv", row.names=F)
 
 
-#create boxplot with data points
 
-#p3 + geom_boxplot(outlier.shape=NA) + geom_jitter(width=0.2) # to overlay with original data points
+
+
 
 
 
