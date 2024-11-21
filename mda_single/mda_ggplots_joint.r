@@ -212,15 +212,21 @@ ggsave("boxplot_D1_joint.pdf", dpi=300, unit="mm", width=180)
 ggsave("boxplot_D1_joint.jpg", dpi=300, unit="mm", width=180)
 
 
-#adding the mean results in an error about 21 data points being removed: extract the means calculated by stat_summary() to compare against the mean factor scores calculated previously. There are no differences
+#adding the mean results in an error about 21 data points being removed:
+#extract the means calculated by stat_summary() to compare against the mean
+#factor scores calculated previously. There are no differences
 
-means_statSum <- ggplot_build(p)$data[[2]]$y
+meansDim1_statSum <- ggplot_build(p)$data[[2]]$y
+
+#add register information in correct order
+
+register_sorted <- sort(unique(scores$register))
 
 #store as dataframe and save
 
-meansDim1 <- data.frame(unique(scores$register), means_statSum)
+meansDim1 <- data.frame(register_sorted, meansDim1_statSum)
 
-colnames(meansDim1) <- c("register", "means_statSummary")
+colnames(meansDim1) <- c("register", "meansDim1_statSummary")
 
 #write.csv(meansDim1, "stats/statsummary_Dim1_means_joint.csv", row.names=F)
 
@@ -242,16 +248,24 @@ p2 <- p2 + geom_boxplot() + stat_summary(fun=mean, colour="black", size=.5, shap
 ggsave("boxplot_D2_joint.pdf", dpi=300, unit="mm", width=180)
 ggsave("boxplot_D2_joint.jpg", dpi=300, unit="mm", width=180)
 
+#adding the mean results in an error about 21 data points being removed:
+#extract the means calculated by stat_summary() to compare against the mean
+#factor scores calculated previously. There are no differences
 
-#adding the mean results in an error about 21 data points being removed: extract the means calculated by stat_summary() to compare against the mean factor scores calculated previously. There are no differences
+meansDim2_statSum <- ggplot_build(p2)$data[[2]]$y
 
-means_statSum2 <- ggplot_build(p2)$data[[2]]$y
+#add register information in correct order
+
+register_sorted <- sort(unique(scores$register))
 
 #store as dataframe and save
 
-meansDim2 <- data.frame(unique(scores$register), means_statSum2)
+meansDim2 <- data.frame(register_sorted, meansDim2_statSum)
 
-colnames(meansDim2) <- c("register", "means_statSummary")
+colnames(meansDim2) <- c("register", "meansDim2_statSummary")
+
+
+
 
 #write.csv(meansDim2, "stats/statsummary_Dim2_means_joint.csv", row.names=F)
 
