@@ -3,7 +3,7 @@
 #### Supplementary materials for: Podcasts as an emerging register of computer-mediated communication (version 1.0)
 
 
-DOI: 
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.14868843.svg)](https://doi.org/10.5281/zenodo.14868842)
 
 ### Description
 
